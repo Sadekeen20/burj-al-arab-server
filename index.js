@@ -23,6 +23,12 @@ admin.initializeApp({
 app.use(cors());
 app.use(bodyParser.json());
 
+
+app.get('/',(req, res)=>{
+    res.send('working')
+})
+
+
 const MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(uri, { useNewUrlParser: true ,useUnifiedTopology:true});
 client.connect(err => {
